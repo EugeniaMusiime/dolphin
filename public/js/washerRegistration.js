@@ -1,5 +1,5 @@
+//Access the form elements
 let fullName = document.getElementById("fullName")
-//let lastName = document.getElementById('lastName');
 let birthDate = document.getElementById("birthDate")
 let inputGender = document.getElementById("inputGender")
 let NIN = document.getElementById("NIN")
@@ -24,8 +24,7 @@ Adult = (inputdate) => {
     let date = inputdate.replace(/-/gi, ", ")
     let today = new Date().getTime()
     let bd = new Date(date).getTime()
-    console.log((today - bd)/(1000*60*60*24*30*12) > 18 ? true : false )
-    return (today - bd)/(1000*60*60*24*30*12) > 18 ? true : false  
+    return (today - bd)/(1000*60*60*24*30*12) >= 18 ? true : false  
 }
 
 fullName.addEventListener(

@@ -8,13 +8,15 @@ router.get("/", async (req, res) => {
     let washers = []
     let cars = []
 
+    //
     await Washer.find()
         .exec()
         .then((res) => {
             washers = res
         })
         .catch((err) => console.log(err))
-
+    
+    //cars washed on that day(in 24hours)
     await Car.find({
         date: {
             $gte: new Date(new Date().setHours(00, 00, 00)),
@@ -30,6 +32,7 @@ router.get("/", async (req, res) => {
     let carsWashed = []
     let wages = []
 
+    //for @Kanabe, this nested 'for' loop determines the number of cars washed on that day and the ammout made on that day
     for (i = 0; i < washers.length; i++) {
         let totalCarsWashed = 0
         let wage = 0
@@ -44,6 +47,7 @@ router.get("/", async (req, res) => {
         wages[i] = wage
     }
 
+    //This allows me access these through pug
     res.render("home", {
         washers: washers,
         carsWashed: carsWashed,
