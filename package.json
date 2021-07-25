@@ -1,5 +1,5 @@
 {
-  "name": "ZaWashEugenia",
+  "name": "zawasheugenia",
   "version": "1.0.0",
   "description": "A basic CRUD web application with MongoDB, ExpressJs, Pug &amp; NodeJs.",
   "main": "index.js",
