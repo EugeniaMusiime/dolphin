@@ -1,0 +1,86 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous')
+  title ZaWasher - Car Registration
+  style.
+    nav.navbar {
+    border-bottom: solid 1px #05183E;
+    }
+// Navigation bar
+nav#navbar.navbar.navbar-expand-md.navbar-light.py-3.mx-4
+  .container-fluid
+    a.navbar-brand(href='#')
+      span.fw-bold.fst-italic(style='color: #05183E;')
+        | ZaWash Bay.
+    // toogle button for mobile nax
+    button.navbar-toggler.d-md-none(type='button' data-bs-toggle='collapse' data-bs-target='#mainNav' aria-controls='mainNav' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    // nav bar links
+    #mainNav.collapse.navbar-collapse.justify-content-end.align-center(style='color: #05183E;')
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='/home')  Home
+        li.nav-item
+          a.nav-link.active(href='/car' aria-current='page') Car Registration
+        li.nav-item
+          a.nav-link(href='/washer') Washer Registration
+        li.nav-item.d-md-none
+          a.nav-link(href='/') Sign Out
+        li.nav-item.ms-2.d-none.d-md-inline
+          a.btn.btn-outline-secondary(href='/') Sign Out
+section
+  .container-fluid
+    .row.g-3.justify-content-center.align-items-center.pt-4.pb-5
+      .col-md-7
+        .text-center.border-bottom.mb-3
+          header
+            h2.car.fst-italic.display-5 Car Registration
+        .form-wrapper
+          form#carRegister.row.g-3(action='/car' method='POST' onsubmit='return validateCar(event)')
+            div
+              label.form-label(for='plate') Number Plate
+              input#plate.form-control(type='text' placeholder='Number Plate' name='plate')
+              small#errorPlate
+            div
+              label.form-label(for='date') Entry Date
+              input#date.form-control(type='date' placeholder='Entry Date' name='date')
+              small#errorDate
+            .col-md-4
+              label.form-label(for='make') Car Make
+              input#make.form-control(type='text' placeholder='Car Make' name='make')
+              small#errorMake
+            .col-md-4
+              label.form-label(for='type') Car Type
+              input#type.form-control(type='text' placeholder='Car Type' name='type')
+              small#errorType
+            .col-md-4
+              label.form-label(for='color') Color
+              input#color.form-control(type='text' placeholder='Color' name='color')
+              small#errorColor
+            .col-md-6
+              label.form-label(for='assignedWasher') Assigned Kanaabe
+              input#assignedWasher.form-control(type='text' placeholder='Assigned Kanaabe' name='washer')
+              //- select#assignedWasher.form-control(name="washer")
+              //-   each washer in washers
+              //-     option(value=washer._id) #{washer.fullname}
+              small#errorAssignedWasher
+            .col-md-6
+              label.form-label(for='washPackage') Select a wash package
+              select#washPackage.form-select(name='package')
+                option(selected='' value='Choose a Wash Package:') Choose a Wash Package:
+                option(value='5000') Boda-boda Wash
+                option(value='10000') Small Car Wash
+                option(value='15000') Medium Car Wash
+              small#errorWashPackage
+            .d-grid
+              button#submit.btn.btn-outline-secondary(type='submit')
+                | Register
+footer.row.justify-content-center
+        div.col-md-8
+            block footer
+            div.col-md-12 © 2021 Refactory Cohort 0008, Eugenia Musiimemaria.
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous')
+script(src='/js/carRegistration.js')

@@ -1,0 +1,83 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous')
+  title ZaWash - Home
+  style.
+    nav.navbar {
+    border-bottom: solid 1px #05183e;
+    }
+// Navigation bar
+nav#navbar.navbar.navbar-expand-md.navbar-light.py-3.mx-4
+  .container-fluid
+    a.navbar-brand(href='#')
+      span.fw-bold.fst-italic.navHead(style='color: #05183e')
+        | ZaWash Bay.
+    // toogle button for mobile nax
+    button.navbar-toggler.d-md-none(type='button' data-bs-toggle='collapse' data-bs-target='#mainNav' aria-controls='mainNav' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    // nav bar links
+    #mainNav.collapse.navbar-collapse.justify-content-end.align-center(style='color: #05183e')
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link.active(href='/home' aria-current='page') Home
+        li.nav-item
+          a.nav-link(href='/car') Car Registration
+        li.nav-item
+          a.nav-link(href='/washer') Kanaabe Registration
+        li.nav-item.d-md-none
+          a.nav-link(href='/') Sign Out
+        li.nav-item.ms-2.d-none.d-md-inline
+          a.btn.btn-outline-secondary(href='/') Sign Out
+          
+// Daily worker profile table
+.row.g-3.justify-content-center.align-items-center.py-4
+  .col-md-8
+    .text-center.border-bottom.mb-3
+      header
+        h2.washer.fst-italic.display-5
+          | Daily worker profile
+    .table-responsive
+      table.table.align-middle
+        thead
+          tr
+            th(scope='col') Kanaabe&apos;s Name
+            th(scope='col') Number of cars washed
+            th(scope='col') Daily wage(UGX)
+        tbody
+          each washer, index in washers
+            tr
+              td #{washer.fullname}
+              td #{carsWashed[index]}
+              td #{wages[index]}
+
+    .form-wrapper
+      form#carRegister.row.g-3(action='/' method='POST')
+        div
+    
+          .text-center.border-bottom.mb-3
+            header
+              h2.washer.fst-italic.display-5
+                | ZaWash Accounts
+          if profit
+            p#profit Profit: UGX #{profit}
+
+          label.form-label(for='date') Start Date
+            input#date.form-control(type='date' name='start')
+            small#errorDate
+
+          label.form-label(for='date') End Date
+            input#date.form-control(type='date' name='end')
+            small#errorDate
+          
+          .d-grid
+            button#submit.btn.btn-outline-secondary(type='submit')
+              | Submit
+footer.row.justify-content-center
+        div.col-md-8
+            block footer
+            div.col-md-12 © 2021 Refactory Cohort 0008, Eugenia Musiimemaria.
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous')
+script(src='#')

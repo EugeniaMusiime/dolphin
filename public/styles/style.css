@@ -1,0 +1,67 @@
+
+body{
+    background-image: url(bodaa.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    .container {
+      width: 50%;
+      height: 30%;
+      margin: auto;
+    }
+    
+    h1 {
+      text-align: center;
+      font-family: sans-serif;
+      color: cornflowerblue;
+      font-weight: bold;
+    }
+    #form-wrapper {
+      background-color: gray;
+      justify-content: center;
+      padding: 15px;
+      border-radius: 8px;
+      border: 2px solid grey;
+      opacity: 90%;
+    }
+    form {
+      padding: 15px;
+     text-align: center;
+    }
+    button {
+      margin: auto;
+      width: 50%;
+      padding: 5px;
+      display: block;
+      border: none;
+      background-color: cornflowerblue;
+      font-size: 24px;
+      border-radius: 8px;
+    }
+    input{
+        width: 85%;
+        padding: 8px;
+        border: none;
+        border-radius: 12px;
+       color: grey;
+    }
+    select{
+        width: 75%;
+        padding: 8px;
+        border: none;
+        border-radius: 12px;
+        color:grey;
+    }
+    .container2{
+       width: 50%;
+       float: left;
+       
+    }
+    .container3{
+        width: 50%;
+        float: right;
+     }
+     input[type=number]{
+         width: 70%;
+     }
+     
