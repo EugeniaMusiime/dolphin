@@ -11,6 +11,6 @@ ___
 ## Funtionality
 - Registers a kanaabe.
 - Registers a car for a car wash.
-- Displays a kanaabes daily wage.
+- Displays a kanaabe's daily wage.
 - Displays the number of cars washed by a kanaabe.
 - Displays a day, week or month ZaWash earnings.
