@@ -68,6 +68,7 @@ router.post("/", async (req, res) => {
         })
         .catch((err) => console.log(err))
 
+    
     await Car.find({
         date: {
             $gte: new Date(new Date().setHours(00, 00, 00)),
@@ -97,6 +98,7 @@ router.post("/", async (req, res) => {
         wages[i] = wage
     }
 
+    //cars washed on that day(in the period between start and end)
     let start = req.body.start.replace(/-/gi, ", ")
     let end = req.body.end.replace(/-/gi, ", ")
     await Car.find({

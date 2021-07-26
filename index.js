@@ -8,7 +8,7 @@ const home = require("./routes/home")
 const manager = require("./routes/manager")
 const login = require("./routes/login")
 
-//insstations
+//instantiations
 const app = express()
 
 //settings or configurations

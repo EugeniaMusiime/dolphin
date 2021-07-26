@@ -3,6 +3,7 @@ const router = express.Router()
 const Car = require("../models/carModel")
 const Washer = require("../models/washerModel")
 
+//find out what I spent to wash a particular car per washer
 UnitCost = (a) => {
     let value
 
@@ -21,11 +22,13 @@ UnitCost = (a) => {
     return value
 }
 
+//find out what I spent in total to wash a particular car
 TotalCost = (package, washers) => {
     let arrayOfWashers = washers.split(" ")
     return UnitCost(package) * arrayOfWashers.length
 }
 
+//find out what I made off in total to wash a particular car
 ZaWashWage = (a, b) => {
     return a - TotalCost(a, b)
 }

@@ -7,6 +7,7 @@ router.get("/", (req, res) => {
     res.render("login")
 })
 
+//auth is my middleware to check whether my manager is a valid user.
 router.post("/", auth, (req, res) => {
     res.redirect("/home")
 })
