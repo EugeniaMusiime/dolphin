@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 
     await newManager
         .save()
-        .then((item) => console.log("Saved succesfully: " + item))
+        .then()
         .catch((err) => console.log(err))
 
     res.redirect("/home")
