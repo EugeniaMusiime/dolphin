@@ -1,3 +1,4 @@
+//import modules into this file
 const express = require("express")
 const router = express.Router()
 const Car = require("../models/carModel")
@@ -32,6 +33,7 @@ TotalCost = (package, washers) => {
 ZaWashWage = (a, b) => {
     return a - TotalCost(a, b)
 }
+
 
 router.get("/", async (req, res) => {
     var washerlist = await Washer.find();

@@ -1,14 +1,16 @@
+//import modules into this file
 const express = require("express")
 const router = express.Router()
 const Car = require("../models/carModel")
 const Washer = require("../models/washerModel")
 
+//What is served to the client
 router.get("/", async (req, res) => {
     let profit = false
     let washers = []
     let cars = []
 
-    //
+    //Query to the database and store the washers' names in an array
     await Washer.find()
         .exec()
         .then((res) => {
@@ -16,7 +18,7 @@ router.get("/", async (req, res) => {
         })
         .catch((err) => console.log(err))
     
-    //cars washed on that day(in 24hours)
+    //Query to the database and store the cars washed on that day(in 24hours)
     await Car.find({
         date: {
             $gte: new Date(new Date().setHours(00, 00, 00)),
@@ -47,7 +49,7 @@ router.get("/", async (req, res) => {
         wages[i] = wage
     }
 
-    //This allows me access these through pug
+    //Access these in pug
     res.render("home", {
         washers: washers,
         carsWashed: carsWashed,
@@ -56,6 +58,7 @@ router.get("/", async (req, res) => {
     })
 })
 
+//What is served to the post
 router.post("/", async (req, res) => {
     let profit = 0
     let washers = []

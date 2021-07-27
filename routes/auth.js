@@ -1,5 +1,5 @@
 //auth is my middleware to check whether my manager is a valid user.
-//look into passport...
+//look into passport
 const Manager = require("../models/managerModel")
 
 const auth = async (req, res) => {

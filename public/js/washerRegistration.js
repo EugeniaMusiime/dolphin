@@ -20,6 +20,7 @@ let alphaRegex = /^[A-Za-z\s]+$/
 let empIdRegex = /^zawash-[0-9]{3}$/
 let ninRegex = /^C[A-Z]{1}[0-9]{8}[A-Z]{4}$/
 
+//getTime() - milliseconds from 01-01-1970
 Adult = (inputdate) => {
     let date = inputdate.replace(/-/gi, ", ")
     let today = new Date().getTime()
